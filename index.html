@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>hw7</title>
+</head>
+<body>
+	<script>
+		
+		// 1task: вывод четных
+		
+  		var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+		function even(a) {
+			var ar = [];
+
+			for (var i = 0; i < a.length; i++) {
+				if((arr[i] % 2) === 0) {
+					ar.push(a[i]);
+				}
+
+			}
+			return ar;
+		}
+
+		console.log(even(arr));
+
+		// 2task: вывод нечетных
+		var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+		function odd(a) {
+			var ar = [];
+
+			for (var i = 0; i < a.length; i++) {
+				if(i % 2 === 0) {
+					ar.push(a[i]);
+				}
+
+			}
+			return ar;
+		}
+
+		console.log(odd(arr));
+
+
+		// 3 task: проверка палиндром
+		var poly = 2000;
+		var ylop = 0; 
+		var isPalindrome = false; 
+
+		poly = poly.toString();
+		ylop = poly.split('').reverse().join(''); 
+
+		if (poly === ylop) {
+		  isPalindrome = true;
+		} else {
+		  isPalindrome = false;
+		  }
+
+		console.log(isPalindrome);
+				
+		// 4 task: Многомерный массив => Однородный массив
+		var arr = [
+		[1, 2, 3],
+		[4, 5],
+		[6],
+		[7, 8],
+		[9, 10, 11]
+		];
+
+		var flat = arr.reduce(function(result, current) {
+		  return result.concat(current);
+		}, []);
+
+		console.log(flat); 
+
+	</script>
+
+</body>
+</html>
