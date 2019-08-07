@@ -25,14 +25,14 @@
 
 		console.log(even(arr));
 
-		// 2task: вывод нечетных
+		// 2task: вывод нечетных - переделанный вариант
 		var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 		function odd(a) {
 			var ar = [];
 
 			for (var i = 0; i < a.length; i++) {
-				if(i % 2 === 0) {
+				if((arr[i]) % 2 === 1) {
 					ar.push(a[i]);
 				}
 
@@ -59,20 +59,34 @@
 
 		console.log(isPalindrome);
 				
-		// 4 task: Многомерный массив => Однородный массив
+		// 4 task: Многомерный массив => Однородный массив - переделанный вариант
 		var arr = [
 		[1, 2, 3],
-		[4, 5],
-		[6],
-		[7, 8],
-		[9, 10, 11]
+		[3, 4, 5],
+		[6, 7, 8],
+		[9, 10, 
+			[11, 12]],
 		];
 
-		var flat = arr.reduce(function(result, current) {
-		  return result.concat(current);
-		}, []);
+		var combineArr = function flat(array){
+			var res = [];
 
-		console.log(flat); 
+			arr.forEach(function elementsArray(item){
+				if(Array.isArray(item)) {
+					return item.forEach(elementsArray)
+				}
+				return res.push(item)				
+			})
+			return res
+		}
+
+		console.log(combineArr(arr)); 
+		
+
+
+		
+
+		
 
 	</script>
 
